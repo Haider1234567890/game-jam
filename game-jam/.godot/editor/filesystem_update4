@@ -1,3 +1,4 @@
 res://game_scene.tscn
 res://Enemy.cs
 res://main.cs
+res://enemy.tscn
