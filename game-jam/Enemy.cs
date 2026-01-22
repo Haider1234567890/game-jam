@@ -38,7 +38,6 @@ public partial class Enemy : Node2D
 	private void TakeDamage(int dmg)
 	{
 		_currentHealth -= dmg;
-
 		if (_currentHealth <= 0)
 			Die();
 	}
