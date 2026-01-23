@@ -1,6 +1,6 @@
 extends Sprite2D
 
-@export var pulse_scale := Vector2(1.3, 1.3)
+@export var pulse_scale := Vector2(0.3, 0.3)
 @export var pulse_time := 0.1
 
 var base_scale := Vector2.ONE

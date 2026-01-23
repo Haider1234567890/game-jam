@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://cmd5lauvu536y"]
 
 [ext_resource type="Script" uid="uid://dsyrpu0rsl54g" path="res://game.gd" id="1_e2o6t"]
-[ext_resource type="Texture2D" uid="uid://c77dfeawnjnm5" path="res://icon.svg" id="2_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://cwv6ueday4fom" path="res://FadeTransition.tscn" id="2_feb5d"]
+[ext_resource type="Texture2D" uid="uid://77pd78s0cla6" path="res://Assets/round-crosshair-icon-md-548478296.png" id="2_ryrav"]
 [ext_resource type="Script" uid="uid://np5ef37bdmse" path="res://player.gd" id="3_7jktm"]
 [ext_resource type="Script" uid="uid://cwh2unb1qedvr" path="res://enemy.gd" id="5_7jktm"]
 [ext_resource type="Script" uid="uid://db5knxdxw85ob" path="res://boss.gd" id="6_ryrav"]
@@ -11,10 +11,13 @@
 script = ExtResource("1_e2o6t")
 
 [node name="Player" type="Sprite2D" parent="."]
-texture = ExtResource("2_fc0e3")
+position = Vector2(-3, -3.0517578e-05)
+scale = Vector2(0.17, 0.1975)
+texture = ExtResource("2_ryrav")
 script = ExtResource("3_7jktm")
 
 [node name="FadeTransition" parent="." instance=ExtResource("2_feb5d")]
+visible = false
 
 [node name="Enemy" type="Sprite2D" parent="."]
 script = ExtResource("5_7jktm")

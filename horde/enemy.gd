@@ -2,12 +2,12 @@ extends Node2D
 
 @export var BaseSpeed: float = 60.0
 @export var BaseHealth: int = 3
-
+var Difficulty: int = 1
 var _current_health: int
 var SpeedMultiplier: float = 1.0
 
 func _ready() -> void:
-	var game = get_tree().root.get_node("main") # adjust if needed
+	var game = get_tree().root.get_node("/root/Game") # adjust if needed
 	SpeedMultiplier = game.Difficulty
 	_current_health = BaseHealth + game.DifficultyHealthBonus
 
