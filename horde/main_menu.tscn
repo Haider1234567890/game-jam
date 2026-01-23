@@ -1,0 +1,151 @@
+[gd_scene load_steps=12 format=3 uid="uid://xu11q5bfqq67"]
+
+[ext_resource type="Texture2D" uid="uid://kdyhr0h8yhgv" path="res://Background.png" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://c4celabjal2iv" path="res://main_menu.gd" id="1_7vrkn"]
+[ext_resource type="PackedScene" uid="uid://cwv6ueday4fom" path="res://FadeTransition.tscn" id="3_fu7sn"]
+[ext_resource type="FontFile" uid="uid://dvh35bdeqikbc" path="res://Assets/Creepster-Regular.ttf" id="3_jix8l"]
+[ext_resource type="Script" uid="uid://cyw48ghu3ggip" path="res://b_start.gd" id="4_glbon"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7vrkn"]
+texture = ExtResource("1_06t4h")
+modulate_color = Color(0.2520276, 0.25202766, 0.25202763, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_06t4h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06t4h"]
+bg_color = Color(0.5529412, 0.6392157, 0, 1)
+corner_radius_top_left = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fu7sn"]
+bg_color = Color(0.5529412, 0.6392157, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jix8l"]
+bg_color = Color(0.3746303, 0.43560004, 1.92523e-07, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_06t4h"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_7vrkn")
+
+[node name="PSplashScreen" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxTexture_7vrkn")
+
+[node name="PLogo" type="Panel" parent="PSplashScreen"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -549.0
+offset_top = 33.0
+offset_right = -70.0
+offset_bottom = 227.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_06t4h")
+
+[node name="ButtonManager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 385.875
+offset_top = 289.0
+offset_right = 425.875
+offset_bottom = 329.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ButtonManager"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -391.875
+offset_top = -21.0
+offset_right = -11.625
+offset_bottom = 279.0
+grow_horizontal = 2
+theme_override_constants/separation = 18
+
+[node name="BStart" type="Button" parent="ButtonManager/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84043455, 0.8404348, 1.92523e-06, 1)
+theme_override_colors/font_pressed_color = Color(0.3958915, 0.39589143, 9.62615e-08, 1)
+theme_override_colors/font_hover_color = Color(0.48570347, 0.48570353, 0.48570347, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_jix8l")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxFlat_06t4h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fu7sn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jix8l")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_06t4h")
+text = "Start Game"
+icon_alignment = 1
+script = ExtResource("4_glbon")
+
+[node name="BOptions" type="Button" parent="ButtonManager/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84043455, 0.8404348, 1.92523e-06, 1)
+theme_override_colors/font_pressed_color = Color(0.3958915, 0.39589143, 9.62615e-08, 1)
+theme_override_colors/font_hover_color = Color(0.48570347, 0.48570353, 0.48570347, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_jix8l")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxFlat_06t4h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fu7sn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jix8l")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_06t4h")
+text = "Options"
+icon_alignment = 1
+
+[node name="BExit" type="Button" parent="ButtonManager/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84043455, 0.8404348, 1.92523e-06, 1)
+theme_override_colors/font_pressed_color = Color(0.3958915, 0.39589143, 9.62615e-08, 1)
+theme_override_colors/font_hover_color = Color(0.48570347, 0.48570353, 0.48570347, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_jix8l")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxFlat_06t4h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fu7sn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jix8l")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_06t4h")
+text = "Exit"
+icon_alignment = 1
+
+[node name="FadeTransition" parent="." instance=ExtResource("3_fu7sn")]
+visible = false
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_horizontal = 4
+
+[node name="FadeTimer" type="Timer" parent="FadeTransition"]
+
+[connection signal="pressed" from="ButtonManager/VBoxContainer/BStart" to="." method="_on_b_start_pressed"]
+[connection signal="pressed" from="ButtonManager/VBoxContainer/BOptions" to="." method="_on_b_options_pressed"]
+[connection signal="pressed" from="ButtonManager/VBoxContainer/BExit" to="." method="_on_b_exit_pressed"]
+[connection signal="timeout" from="FadeTransition/FadeTimer" to="." method="_on_fade_timer_timeout"]
