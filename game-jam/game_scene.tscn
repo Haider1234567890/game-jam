@@ -52,8 +52,10 @@ corner_radius_top_left = 68
 corner_radius_bottom_right = 60
 corner_detail = 3
 shadow_size = 10
+[ext_resource type="Script" uid="uid://b52ragjt4377e" path="res://main.cs" id="1_po0ka"]
 
 [node name="GameScene" type="Node2D"]
+script = ExtResource("1_po0ka")
 
 [node name="Enemy" type="Node2D" parent="."]
 script = ExtResource("1_mlf6e")
@@ -229,3 +231,4 @@ theme_override_font_sizes/font_size = 55
 theme_override_styles/background = SubResource("StyleBoxFlat_mixcd")
 theme_override_styles/fill = SubResource("StyleBoxFlat_mj2jn")
 value = 100.0
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
