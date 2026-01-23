@@ -1,7 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlkm7mvamqpdy"]
+[gd_scene load_steps=11 format=3 uid="uid://dlkm7mvamqpdy"]
 
 [ext_resource type="Script" uid="uid://bth2qkgxqaovf" path="res://Enemy.cs" id="1_mlf6e"]
 [ext_resource type="FontFile" uid="uid://41bfvn5cglfv" path="res://Creepster-Regular.ttf" id="2_po0ka"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kdryc"]
+bg_color = Color(0.25669944, 0.7140604, 9.62615e-07, 1)
+corner_radius_top_left = 95
+corner_radius_bottom_right = 110
+corner_radius_bottom_left = 15
+shadow_size = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6e45b"]
+bg_color = Color(0.6055863, 0.63533056, 5.7756904e-07, 1)
+corner_radius_top_left = 75
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e35lh"]
+bg_color = Color(0.60257477, 0.63642704, 0, 1)
+corner_radius_bottom_right = 110
+shadow_size = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mlf6e"]
 bg_color = Color(0.31289095, 0.7082063, 0, 1)
@@ -19,6 +36,22 @@ corner_detail = 1
 expand_margin_left = 12.0
 shadow_size = 10
 anti_aliasing_size = 1.005
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_po0ka"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mixcd"]
+bg_color = Color(0.23215109, 0.7166721, 0, 1)
+corner_radius_top_left = 68
+corner_radius_bottom_right = 60
+corner_detail = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mj2jn"]
+bg_color = Color(0.38471377, 0.6792261, 5.7756904e-07, 1)
+corner_radius_top_left = 68
+corner_radius_bottom_right = 60
+corner_detail = 3
+shadow_size = 10
 
 [node name="GameScene" type="Node2D"]
 
@@ -39,26 +72,92 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HealthBar" type="ProgressBar" parent="CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -2.0
-offset_right = 2.0
-offset_bottom = 27.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 34
-value = 100.0
-
 [node name="UpgradePanel" type="Panel" parent="CanvasLayer/Control"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -40.0
-offset_right = 40.0
+offset_left = 10.0
+offset_top = -164.59497
+offset_right = 359.0
+offset_bottom = -11.0
 grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kdryc")
+
+[node name="Padding" type="MarginContainer" parent="CanvasLayer/Control/UpgradePanel"]
+layout_mode = 0
+offset_right = 171.0
+offset_bottom = 97.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="UpgradesRow" type="HBoxContainer" parent="CanvasLayer/Control/UpgradePanel/Padding"]
+layout_mode = 2
+theme_override_constants/separation = 11
+
+[node name="GunUpgradeBox" type="PanelContainer" parent="CanvasLayer/Control/UpgradePanel/Padding/UpgradesRow"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6e45b")
+
+[node name="Padding" type="MarginContainer" parent="CanvasLayer/Control/UpgradePanel/Padding/UpgradesRow/GunUpgradeBox"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/UpgradePanel/Padding/UpgradesRow/GunUpgradeBox/Padding"]
+layout_mode = 2
+
+[node name="GunTitle" type="Label" parent="CanvasLayer/Control/UpgradePanel/Padding/UpgradesRow/GunUpgradeBox/Padding/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_po0ka")
+theme_override_font_sizes/font_size = 34
+text = "     GUN"
+
+[node name="GunLevel" type="Label" parent="CanvasLayer/Control/UpgradePanel/Padding/UpgradesRow/GunUpgradeBox/Padding/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_po0ka")
+theme_override_font_sizes/font_size = 34
+text = "   LV : 1"
+
+[node name="GunCost" type="Label" parent="CanvasLayer/Control/UpgradePanel/Padding/UpgradesRow/GunUpgradeBox/Padding/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_po0ka")
+theme_override_font_sizes/font_size = 34
+text = "Cost: 100"
+
+[node name="HealthUpgrade" type="PanelContainer" parent="CanvasLayer/Control/UpgradePanel/Padding/UpgradesRow"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e35lh")
+
+[node name="Padding" type="MarginContainer" parent="CanvasLayer/Control/UpgradePanel/Padding/UpgradesRow/HealthUpgrade"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/UpgradePanel/Padding/UpgradesRow/HealthUpgrade/Padding"]
+layout_mode = 2
+
+[node name="HealthTitle" type="Label" parent="CanvasLayer/Control/UpgradePanel/Padding/UpgradesRow/HealthUpgrade/Padding/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_po0ka")
+theme_override_font_sizes/font_size = 34
+text = "CURRENT HEALTH"
+
+[node name="HealthLevel" type="Label" parent="CanvasLayer/Control/UpgradePanel/Padding/UpgradesRow/HealthUpgrade/Padding/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_po0ka")
+theme_override_font_sizes/font_size = 34
+text = "LV : 1"
+
+[node name="HealthCost" type="Label" parent="CanvasLayer/Control/UpgradePanel/Padding/UpgradesRow/HealthUpgrade/Padding/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_po0ka")
+theme_override_font_sizes/font_size = 34
+text = "Cost: 100"
 
 [node name="PointsBubble" type="PanelContainer" parent="CanvasLayer/Control"]
 layout_mode = 1
@@ -109,3 +208,24 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.8235294)
 theme_override_fonts/font = ExtResource("2_po0ka")
 theme_override_font_sizes/font_size = 34
 text = " Time Survived: 00:00"
+
+[node name="HealthBubble" type="PanelContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -213.48499
+offset_top = 26.72
+offset_right = 136.51672
+offset_bottom = 91.72
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_po0ka")
+
+[node name="HealthBar" type="ProgressBar" parent="CanvasLayer/Control/HealthBubble"]
+custom_minimum_size = Vector2(350, 25)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_po0ka")
+theme_override_font_sizes/font_size = 55
+theme_override_styles/background = SubResource("StyleBoxFlat_mixcd")
+theme_override_styles/fill = SubResource("StyleBoxFlat_mj2jn")
+value = 100.0
