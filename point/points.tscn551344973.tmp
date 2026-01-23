@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cple7nef7clir"]
+
+[ext_resource type="Script" uid="uid://dhh0jwvmssms" path="res://points.gd" id="1_n31ie"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_n31ie")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 342.0
+offset_bottom = 103.0
+text = "POINTS"
