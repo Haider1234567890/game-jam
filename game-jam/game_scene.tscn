@@ -1,6 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://dlkm7mvamqpdy"]
+[gd_scene load_steps=5 format=3 uid="uid://dlkm7mvamqpdy"]
 
 [ext_resource type="Script" uid="uid://bth2qkgxqaovf" path="res://Enemy.cs" id="1_mlf6e"]
+[ext_resource type="FontFile" uid="uid://41bfvn5cglfv" path="res://Creepster-Regular.ttf" id="2_po0ka"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mlf6e"]
+bg_color = Color(0.31289095, 0.7082063, 0, 1)
+corner_radius_top_left = 45
+corner_radius_bottom_right = 25
+shadow_color = Color(0, 0, 0, 0.8784314)
+shadow_size = 10
+shadow_offset = Vector2(1.9, 2.82)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v1wow"]
+bg_color = Color(0.2440578, 0.71544397, 9.62615e-07, 1)
+corner_radius_top_left = 30
+corner_radius_bottom_right = 40
+corner_detail = 1
+expand_margin_left = 12.0
+shadow_size = 10
+anti_aliasing_size = 1.005
 
 [node name="GameScene" type="Node2D"]
 
@@ -10,3 +28,84 @@ script = ExtResource("1_mlf6e")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
 
 [node name="Sprite2D" type="Sprite2D" parent="Enemy"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HealthBar" type="ProgressBar" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -2.0
+offset_right = 2.0
+offset_bottom = 27.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 34
+value = 100.0
+
+[node name="UpgradePanel" type="Panel" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="PointsBubble" type="PanelContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+offset_left = 7.885
+offset_top = 10.43
+offset_right = 141.885
+offset_bottom = 67.43006
+theme_override_styles/panel = SubResource("StyleBoxFlat_mlf6e")
+
+[node name="Padding" type="MarginContainer" parent="CanvasLayer/Control/PointsBubble"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="Points" type="Label" parent="CanvasLayer/Control/PointsBubble/Padding"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.9607843)
+theme_override_constants/line_spacing = 4
+theme_override_fonts/font = ExtResource("2_po0ka")
+theme_override_font_sizes/font_size = 34
+text = " Points: 0 "
+
+[node name="TimeBubble" type="PanelContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -360.0
+offset_top = 15.0
+offset_right = -23.0
+offset_bottom = 72.0
+grow_horizontal = 0
+pivot_offset = Vector2(70, 70)
+theme_override_styles/panel = SubResource("StyleBoxFlat_v1wow")
+
+[node name="Padding" type="MarginContainer" parent="CanvasLayer/Control/TimeBubble"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="Timer" type="Label" parent="CanvasLayer/Control/TimeBubble/Padding"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.8235294)
+theme_override_fonts/font = ExtResource("2_po0ka")
+theme_override_font_sizes/font_size = 34
+text = " Time Survived: 00:00"
