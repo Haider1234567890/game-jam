@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Horde")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fce6826aba9a577a9029dbd7d133a61d4872cfac")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+703ee98d3199fa1a56a2fd86fb3e4f9a7864e23b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Horde")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Horde")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

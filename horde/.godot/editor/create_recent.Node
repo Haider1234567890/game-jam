@@ -1,1 +1,14 @@
+AnimatedSprite2D
+CollisionShape2D
 Sprite2D
+Area2D
+Panel
+Control
+CanvasLayer
+Button
+Label
+VBoxContainer
+MarginContainer
+PanelContainer
+HBoxContainer
+ProgressBar

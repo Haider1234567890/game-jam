@@ -3,3 +3,7 @@ res://enemy.gd
 res://boss.gd
 res://game.gd
 res://player.gd
+res://ui.tscn
+res://main_menu.tscn
+res://ui.gd
+res://enemyAnimate.gd

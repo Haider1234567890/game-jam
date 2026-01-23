@@ -1,0 +1,228 @@
+[gd_scene load_steps=11 format=3 uid="uid://1q3udmibwc3l"]
+
+[ext_resource type="FontFile" uid="uid://dvh35bdeqikbc" path="res://Assets/Creepster-Regular.ttf" id="1_fyqef"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m6e0p"]
+bg_color = Color(0.1910609, 0.7203728, 0, 1)
+corner_radius_top_left = 20
+corner_radius_bottom_right = 30
+shadow_color = Color(0, 0, 0, 0.81960785)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_27fn8"]
+bg_color = Color(0.30515206, 0.70796514, 0, 1)
+corner_radius_top_left = 16
+corner_radius_bottom_right = 20
+corner_detail = 1
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nltto"]
+bg_color = Color(0.3971017, 0.6916222, 0.10045204, 1)
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 30
+corner_radius_bottom_right = 100
+corner_detail = 5
+expand_margin_left = 62.0
+expand_margin_right = 70.0
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ibotj"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n5ude"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y4yjw"]
+bg_color = Color(0.06908261, 0.72697836, 0, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 10
+corner_radius_bottom_right = 140
+expand_margin_left = 8.0
+expand_margin_top = 6.0
+expand_margin_bottom = 6.0
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_waa4j"]
+bg_color = Color(0.54904145, 0.6544598, 1.92523e-07, 1)
+corner_radius_top_left = 30
+shadow_color = Color(0, 0, 0, 0.8)
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ok7cu"]
+bg_color = Color(0.6, 0.6, 0.6, 0.0627451)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_irxef"]
+bg_color = Color(0.510968, 0.66571975, 1.1551381e-06, 1)
+corner_radius_bottom_right = 50
+expand_margin_left = 4.0
+expand_margin_right = 16.0
+shadow_color = Color(0, 0, 0, 0.92156863)
+shadow_size = 3
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = -2.0
+offset_right = 6.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="pointBubble" type="MarginContainer" parent="."]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="PanelContainer" type="PanelContainer" parent="pointBubble"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_m6e0p")
+
+[node name="points" type="Label" parent="pointBubble"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_fyqef")
+theme_override_font_sizes/font_size = 24
+text = " POINTS: 0  "
+
+[node name="TimeBubble" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="PanelContainer" type="PanelContainer" parent="TimeBubble"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_27fn8")
+
+[node name="TimeSurvived" type="Label" parent="TimeBubble"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.92156863)
+theme_override_fonts/font = ExtResource("1_fyqef")
+theme_override_font_sizes/font_size = 24
+text = "  TIME SURVIVED: 00:00   "
+
+[node name="HealthBarBubble" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 12.62
+offset_right = 20.0
+offset_bottom = 53.62
+grow_horizontal = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="HealthBarBubble"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nltto")
+
+[node name="ProgressBar" type="ProgressBar" parent="HealthBarBubble"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_fyqef")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/background = SubResource("StyleBoxFlat_ibotj")
+theme_override_styles/fill = SubResource("StyleBoxFlat_n5ude")
+value = 100.0
+
+[node name="UpgradePanel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 11.85
+offset_top = -95.16998
+offset_right = 171.85
+offset_bottom = -11.169983
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_y4yjw")
+
+[node name="Padding" type="MarginContainer" parent="UpgradePanel"]
+layout_mode = 2
+theme_override_constants/margin_right = 0
+
+[node name="UpgradesRow" type="HBoxContainer" parent="UpgradePanel/Padding"]
+layout_mode = 2
+theme_override_constants/separation = 11
+
+[node name="GunUpgradeBox" type="PanelContainer" parent="UpgradePanel/Padding/UpgradesRow"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_waa4j")
+
+[node name="Padding" type="MarginContainer" parent="UpgradePanel/Padding/UpgradesRow/GunUpgradeBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UpgradePanel/Padding/UpgradesRow/GunUpgradeBox/Padding"]
+layout_mode = 2
+
+[node name="GunTitle" type="Label" parent="UpgradePanel/Padding/UpgradesRow/GunUpgradeBox/Padding/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_fyqef")
+text = "GUN"
+
+[node name="GunLevel" type="Label" parent="UpgradePanel/Padding/UpgradesRow/GunUpgradeBox/Padding/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_fyqef")
+text = "LV: 1"
+
+[node name="GunCostButton" type="Button" parent="UpgradePanel/Padding/UpgradesRow/GunUpgradeBox/Padding/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.90619534, 0.22710627, 5.7756904e-07, 1)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 0.007843138)
+theme_override_fonts/font = ExtResource("1_fyqef")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ok7cu")
+text = "Cost:"
+
+[node name="HealthUpgradeBox2" type="PanelContainer" parent="UpgradePanel/Padding/UpgradesRow"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_irxef")
+
+[node name="Padding" type="MarginContainer" parent="UpgradePanel/Padding/UpgradesRow/HealthUpgradeBox2"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UpgradePanel/Padding/UpgradesRow/HealthUpgradeBox2/Padding"]
+layout_mode = 2
+
+[node name="HealthTitle" type="Label" parent="UpgradePanel/Padding/UpgradesRow/HealthUpgradeBox2/Padding/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.8901961)
+theme_override_fonts/font = ExtResource("1_fyqef")
+text = " HEALTH"
+
+[node name="HealthLevel" type="Label" parent="UpgradePanel/Padding/UpgradesRow/HealthUpgradeBox2/Padding/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7176471)
+theme_override_fonts/font = ExtResource("1_fyqef")
+text = "LV: 1"
+
+[node name="GunCostButton2" type="Button" parent="UpgradePanel/Padding/UpgradesRow/HealthUpgradeBox2/Padding/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.90619534, 0.22710627, 5.7756904e-07, 1)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 0.007843138)
+theme_override_fonts/font = ExtResource("1_fyqef")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ok7cu")
+text = "Cost:"

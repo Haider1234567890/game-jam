@@ -1,26 +1,173 @@
-[gd_scene load_steps=7 format=3 uid="uid://cmd5lauvu536y"]
+[gd_scene load_steps=38 format=3 uid="uid://cmd5lauvu536y"]
 
 [ext_resource type="Script" uid="uid://dsyrpu0rsl54g" path="res://game.gd" id="1_e2o6t"]
+[ext_resource type="Texture2D" uid="uid://ce1p45qyd5sym" path="res://Assets/background.JPG" id="2_f1jbl"]
 [ext_resource type="PackedScene" uid="uid://cwv6ueday4fom" path="res://FadeTransition.tscn" id="2_feb5d"]
 [ext_resource type="Texture2D" uid="uid://77pd78s0cla6" path="res://Assets/round-crosshair-icon-md-548478296.png" id="2_ryrav"]
 [ext_resource type="Script" uid="uid://np5ef37bdmse" path="res://player.gd" id="3_7jktm"]
 [ext_resource type="Script" uid="uid://cwh2unb1qedvr" path="res://enemy.gd" id="5_7jktm"]
+[ext_resource type="Texture2D" uid="uid://blhbodsvrhhrx" path="res://Assets/attack1/attack1_001.png" id="5_7knny"]
+[ext_resource type="Texture2D" uid="uid://b3flap2oguqib" path="res://Assets/attack1/attack1_002.png" id="6_082n1"]
 [ext_resource type="Script" uid="uid://db5knxdxw85ob" path="res://boss.gd" id="6_ryrav"]
+[ext_resource type="PackedScene" uid="uid://1q3udmibwc3l" path="res://ui.tscn" id="7_eow3j"]
+[ext_resource type="Texture2D" uid="uid://bic8fig1mtvr0" path="res://Assets/attack1/attack1_003.png" id="7_xex6t"]
+[ext_resource type="Texture2D" uid="uid://ww066mldnfes" path="res://Assets/attack1/attack1_004.png" id="8_aa0lp"]
+[ext_resource type="Script" uid="uid://brxwvx5l3pvot" path="res://ui.gd" id="8_j5wjh"]
+[ext_resource type="Texture2D" uid="uid://luk14a04sh6p" path="res://Assets/attack1/attack1_005.png" id="9_iu0sx"]
+[ext_resource type="Texture2D" uid="uid://bxg682tx5fopn" path="res://Assets/attack1/attack1_006.png" id="10_4v2jo"]
+[ext_resource type="Texture2D" uid="uid://6q0ah1mmb6i1" path="res://Assets/attack1/attack1_007.png" id="11_l1i01"]
+[ext_resource type="Texture2D" uid="uid://0sd4ujoyjy0w" path="res://Assets/attack1/attack1_008.png" id="12_r62pu"]
+[ext_resource type="Texture2D" uid="uid://c263geqnwtug7" path="res://Assets/attack1/attack1_009.png" id="13_klri6"]
+[ext_resource type="Texture2D" uid="uid://di3m2vmmj2168" path="res://Assets/attack1/attack1_010.png" id="14_eu6ph"]
+[ext_resource type="Texture2D" uid="uid://2rmjxc0qfacb" path="res://Assets/attack1/attack1_011.png" id="15_edr7y"]
+[ext_resource type="Texture2D" uid="uid://bhqny2vs1gvhf" path="res://Assets/attack1/attack1_012.png" id="16_kq12w"]
+[ext_resource type="Texture2D" uid="uid://invf366k8a8y" path="res://Assets/attack1/attack1_013.png" id="17_t46w6"]
+[ext_resource type="Texture2D" uid="uid://batodyle0svue" path="res://Assets/attack1/attack1_014.png" id="18_m28ev"]
+[ext_resource type="Texture2D" uid="uid://b7f73xwnj11mb" path="res://Assets/attack1/attack1_015.png" id="19_lwlx3"]
+[ext_resource type="Texture2D" uid="uid://dwe3g4ybk1536" path="res://Assets/attack1/attack1_016.png" id="20_0de7l"]
+[ext_resource type="Script" uid="uid://dhy002qkt8dba" path="res://enemyAnimate.gd" id="20_qhcbd"]
+[ext_resource type="Texture2D" uid="uid://cauwuu5pjgi8n" path="res://Assets/attack1/attack1_017.png" id="21_87ddb"]
+[ext_resource type="Texture2D" uid="uid://d065xofa8tg48" path="res://Assets/attack1/attack1_018.png" id="22_mljfx"]
+[ext_resource type="Texture2D" uid="uid://cb25mslsr88qx" path="res://Assets/attack1/attack1_019.png" id="23_qpefm"]
+[ext_resource type="Texture2D" uid="uid://cgqlljwl6llbg" path="res://Assets/attack1/attack1_020.png" id="24_tb2lt"]
+[ext_resource type="Texture2D" uid="uid://l4daf1qcrajc" path="res://Assets/attack1/attack1_021.png" id="25_cfc7e"]
+[ext_resource type="Texture2D" uid="uid://d0kokwaykxgm1" path="res://Assets/attack1/attack1_022.png" id="26_gh0px"]
+[ext_resource type="Texture2D" uid="uid://clwbs2b3r3jvt" path="res://Assets/attack1/attack1_023.png" id="27_v33yl"]
+[ext_resource type="Texture2D" uid="uid://tw5a86y8bgyq" path="res://Assets/attack1/attack1_024.png" id="28_2tki7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vaj68"]
+texture = ExtResource("2_f1jbl")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vef74"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ib7ph"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_7knny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_082n1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xex6t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_aa0lp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_iu0sx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4v2jo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_l1i01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_r62pu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_klri6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_eu6ph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_edr7y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_kq12w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_t46w6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_m28ev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_lwlx3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_0de7l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_87ddb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_mljfx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_qpefm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_tb2lt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_cfc7e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_gh0px")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_v33yl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_2tki7")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_e2o6t")
 
-[node name="Player" type="Sprite2D" parent="."]
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1150.0
+offset_bottom = 692.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_vaj68")
+
+[node name="FadeTransition" parent="." instance=ExtResource("2_feb5d")]
+visible = false
+
+[node name="Enemy" type="Area2D" parent="."]
+script = ExtResource("5_7jktm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+shape = SubResource("RectangleShape2D_vef74")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy"]
+position = Vector2(602, 272)
+scale = Vector2(0.59765625, 0.65833336)
+sprite_frames = SubResource("SpriteFrames_ib7ph")
+animation = &"run"
+script = ExtResource("20_qhcbd")
+
+[node name="Boss" type="Sprite2D" parent="."]
+script = ExtResource("6_ryrav")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Boss"]
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="."]
+
+[node name="Player" type="Sprite2D" parent="PlayerCollision"]
 position = Vector2(-3, -3.0517578e-05)
 scale = Vector2(0.17, 0.1975)
 texture = ExtResource("2_ryrav")
 script = ExtResource("3_7jktm")
 
-[node name="FadeTransition" parent="." instance=ExtResource("2_feb5d")]
-visible = false
+[node name="UI" type="CanvasLayer" parent="."]
+layer = 10
 
-[node name="Enemy" type="Sprite2D" parent="."]
-script = ExtResource("5_7jktm")
-
-[node name="Boss" type="Sprite2D" parent="."]
-script = ExtResource("6_ryrav")
+[node name="UI2" parent="." instance=ExtResource("7_eow3j")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 1010.0
+offset_bottom = 656.0
+grow_horizontal = 1
+grow_vertical = 1
+script = ExtResource("8_j5wjh")
