@@ -1,5 +1,10 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1769097139
-Enemy.cs::CSharpScript::3736127824170048615::1769091510::0::1::::<><><>0<>0<><>::
-game_scene.tscn::PackedScene::7952769520694188218::1769091510::0::1::::<><><>0<>0<><>::uid://bth2qkgxqaovf::::res://Enemy.cs
+::res://::1769161772
+Creepster-Regular.ttf::FontFile::2089221057509578811::1769161766::1769161781::1::::<><><>0<>0<>474306872ce0c7fcc087de81411dc3c6<>res://.godot/imported/Creepster-Regular.ttf-c517390ee3397402ea64188169c2ea31.fontdata::
+Enemy.cs::CSharpScript::3736127824170048615::1769103386::0::1::::<><><>0<>0<><>::
+game_scene.tscn::PackedScene::7952769520694188218::1769161766::0::1::::<><><>0<>0<><>::uid://b52ragjt4377e::::res://main.cs
 icon.svg::CompressedTexture2D::8258705053643016607::1769091411::1769097139::1::::<><><>0<>0<>5c64048a12df040a9b85d907f3e11ee9<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+main.cs::CSharpScript::4548856711017222420::1769102786::0::1::::<><><>0<>0<><>::
+enemy.tscn::PackedScene::4928844411514831944::1769102168::0::1::::<><><>0<>0<><>::uid://bth2qkgxqaovf::::res://Enemy.cs
+boss.tscn::PackedScene::8994249770661602759::1769103116::0::1::::<><><>0<>0<><>::uid://bx3ysslxysgvd::::res://Boss.cs
+Boss.cs::CSharpScript::4060056980089155989::1769102355::0::1::::<><><>0<>0<><>::
